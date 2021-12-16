@@ -1,0 +1,38 @@
+{% extends 'Customer/base.html' %}
+
+{% block content %}
+<div class="container mb-5">
+    <div class="row justify-content-center mt-1">
+        <div class="col-md-5 col-sm-12 p-4 text-center">
+            <h1>Order Completed</h1>
+            <p>You will receive your order confirmation email soon</p>
+            <a href="{% url 'index' %}">Go back to the homepage</a>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5 col-sm-12 text-center">
+            <h3 class="pb-3">Order Details:</h3>
+            {% for item in order.all %}
+                <p> {{ item.menu_item.name }} <span class="p1-3"> {{ item.menu_item.price }}</span> </p>
+            {% endfor %}
+
+            <p class="font-weight-bold pt-4">Total Pay: {{ total_pay }}</p>
+        </div>
+    </div>
+    <div class="row justify-content-center pb-2 pt-5">
+        <div class="col-md-6 text-center">
+            <div id="paypal-button container"></div>
+            <h3>Pay Now or Pay With Cash at the Canteen</h3>
+        </div>
+    </div>
+    <div class="row justify-content-center pb-5">
+        <div class="col-md-6 text-center">
+            <div id="paypal-button"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+{% endblock %}

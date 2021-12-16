@@ -1,0 +1,20 @@
+{% extends 'Customer/base.html' %}
+
+
+{% block content %}
+<h1>Search Page</h1>
+<div class="search-bar">
+    <form method="GET" action="{% url 'menu' %}">
+        {% csrf_token %}
+        <div class="form-outline">
+            <input type="search" id="form1" placeholder="search our menu" class="form-control-search-menu" name="q">
+            <label class="from-label" for="form1">Search</label>
+        </div>
+        <button type="submit" class="btn btn-dark">
+        <i class="fas-fas-search" aria-hidden="true"></i>
+        </button>
+    </form>
+</div>
+
+
+{% endblock %}

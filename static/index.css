@@ -1,0 +1,25 @@
+#bg{
+    background-image: url("{% static 'Customer/images/home.jpg' %}");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#menu{
+    background-image: url("{% static 'Customer/images/menu_p.jpg' %}");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+.bg-img{
+    background-image: url("{% static 'Customer/images/contact.jpg' %}");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 380px;
+}

@@ -1,0 +1,28 @@
+{% extends 'Customer/base.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'Customer/index.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'Customer/style.css' %}">
+
+{% block content %}
+<div id="bg" style="background-image: url('{% static 'images/london.jpg' %}');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;">
+    <div class="container-fluid" style="padding-top: 40px;">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
+                <h1>Canteen Management System</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-15">
+            <div class="card col-md-4 col-sm-12 offset-md-1 p-4 text-center">
+                <h2>Place Your Order</h2>
+                <a href="{% url 'order' %}" class="btn btn-outline-primary">Order Now!</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

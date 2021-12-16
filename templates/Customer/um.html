@@ -1,0 +1,97 @@
+<div class="form-group pt-3">
+                    <label for="name">Full Name</label>
+                    <input required class="form-control" type="text" placeholder="Your Name" name="name"/>
+                </div>
+                <div class="form-group pt-3">
+                    <label for="name">Email Address</label>
+                    <input required class="form-control" type="text" placeholder="example@company.com" name="email"/>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <div class="form-group pt-3">
+                            <label for="name">Street</label>
+                            <input required class="form-control" type="text" placeholder="12 main st" name="street"/>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        <div class="form-group pt-3">
+                            <label for="name">City</label>
+                            <input required class="form-control" type="text" placeholder="manchester" name="city"/>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        <div class="form-group pt-3">
+                            <label for="name">Postal Code</label>
+                            <input required class="form-control" type="text" placeholder="E16 2LE" name="postcode"/>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#submitModal">
+                Submit order
+                </button>
+
+                <div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="submitModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="submitModalLabel">Complete Your Order</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Go Back</button>
+                        <button type="submit" class="btn btn-dark">Place Order</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+<form class="navbar-form navbar-left" role="search">
+                  <div class="form-group">
+                      <input type="text" class="form-control" placeholder="search the menu">
+                  </div>
+              <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+              </form>
+
+
+
+          <ul class="navbar-nav">
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Welcome, {{user.username}}</a>
+            </li>
+          {% else %}
+
+            <li class="nav-item">
+              <p>You are not signed in</p>
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+
+          {% endif %}
+
+
+              <li class="nav-item">
+              <a class="nav-link" href="{% url 'register' %}">REGISTER</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">LOGIN</a>
+          </li>

@@ -1,0 +1,33 @@
+{% extends 'Customer/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container py-5">
+    <h1 style="text-align:center"> User Registration</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Join Today</legend>
+            {{ signUpForm | crispy }}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+               {% endfor %}
+            {% endif %}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Register</button>
+        </div>
+    </form>
+
+    {{ signUpForm.error }}
+    <div class="border-top pt-3">
+        <small class="text-muted">If you already have an account?
+            <a href="{% url 'login' %}">Login here</a>
+        </small>
+    </div>
+</div>
+
+{% endblock %}
